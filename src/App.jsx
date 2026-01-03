@@ -3,6 +3,7 @@ import Portada from "./components/Portada"
 import { useEffect, useRef, useState } from "react";
 import theme from "./theme";
 import { VolumeOff, VolumeUp } from "@mui/icons-material";
+import Countdown from "./components/Countdown";
 
 
 const db = {
@@ -78,6 +79,7 @@ function App() {
 
         {/* Pasamos la función al componente de Portada para activarla en el scroll */}
         <Portada data={data} bounce={bounce} onScrollClick={handleScrollClick} />
+        <Countdown targetDate={data.date} />
         
       </ThemeProvider>
     );
