@@ -3,7 +3,7 @@ import KeyboardArrowDownRoundedIcon from "@mui/icons-material/KeyboardArrowDownR
 
 const Portada = ({ data }) => {
   const handleScroll = () => {
-    const nextSection = document.getElementById("frase-inicial");
+    const nextSection = document.getElementById("countdown");
     if (nextSection) {
       nextSection.scrollIntoView({ behavior: "smooth", block: "start" });
     }
@@ -74,7 +74,7 @@ const Portada = ({ data }) => {
               fontSize: "48px",
               lineHeight: 1.05,
               mb: 0.8, // ⬅️ espacio abajo
-              color: "#2b2b2b",
+              color: "#423636",
             }}
           >
             Cati
@@ -86,7 +86,7 @@ const Portada = ({ data }) => {
               fontSize: "28px",
               lineHeight: 1.4,
               mb: 0.8, // ⬅️ separa más del nombre de abajo
-              color: "#2b2b2b",
+              color: "#423636",
             }}
           >
             &
@@ -97,7 +97,7 @@ const Portada = ({ data }) => {
               fontFamily: "'Hattinand', cursive",
               fontSize: "48px",
               lineHeight: 1.05,
-              color: "#2b2b2b",
+              color: "#423636",
             }}
           >
             Eitan

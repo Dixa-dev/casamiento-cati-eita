@@ -25,7 +25,9 @@ const Countdown = ({ targetDate }) => {
 
   return (
     <Box
+    id="countdown"
       sx={{
+        
         backgroundColor: "#F0ECE3",
         height:"40vh",
         display: "flex",
@@ -53,7 +55,7 @@ const Countdown = ({ targetDate }) => {
             fontSize: "10vw",
             fontWeight: 100,
             letterSpacing: "1.5vw",
-            color: "#423636",
+            color: "#746961",
             marginBottom: "4vh",
             lineHeight: 1,
           }}
@@ -98,7 +100,7 @@ const Countdown = ({ targetDate }) => {
 const num = {
   fontSize: "10.7vw", // ~42px
   fontWeight: 500,
-  color: "#6F6F6F",
+  color: "#746961",
   textAlign: "center",
 };
 
