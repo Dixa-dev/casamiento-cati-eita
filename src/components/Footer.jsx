@@ -14,7 +14,7 @@ const Footer = () => {
     >
       <Typography
         sx={{
-          fontFamily: "Hattinand, serif",
+          fontFamily: "Hattinand, serif !important",
           fontSize: "1.1rem",
           color: "#FBF8F1",
         }}
