@@ -70,7 +70,7 @@ const Portada = ({ data }) => {
         <Box sx={{ textAlign: "center" }}>
           <Typography
             sx={{
-              fontFamily: "Hattinand, serif !important",
+              fontFamily: "'Hattinand', cursive !important",
               fontSize: "48px",
               lineHeight: 1.05,
               mb: 0.8, // ⬅️ espacio abajo
@@ -82,7 +82,7 @@ const Portada = ({ data }) => {
 
           <Typography
             sx={{
-              fontFamily: "Hattinand, serif !important",
+              fontFamily: "'Hattinand', cursive",
               fontSize: "28px",
               lineHeight: 1.4,
               mb: 0.8, // ⬅️ separa más del nombre de abajo
@@ -94,7 +94,7 @@ const Portada = ({ data }) => {
 
           <Typography
             sx={{
-              fontFamily: "Hattinand, serif !important",
+              fontFamily: "'Hattinand', cursive",
               fontSize: "48px",
               lineHeight: 1.05,
               color: "#423636",
