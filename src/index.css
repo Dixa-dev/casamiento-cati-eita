@@ -11,10 +11,14 @@
 
 @font-face {
   font-family: "Hattinand";
-  src: url("/Font/Hattinand.ttf") format("truetype");
+  src:
+    url("/Font/Hattinand.woff2") format("woff2"),
+    url("/Font/Hattinand.woff") format("woff");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
+
 
 
 body {
