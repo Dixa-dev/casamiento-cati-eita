@@ -4,105 +4,83 @@ import { Box, Button, Typography, Modal } from "@mui/material";
 const Gift = ({ imgCbu }) => {
   const [open, setOpen] = useState(false);
 
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
-
   return (
     <Box
       sx={{
         bgcolor: "#ADA6A0",
-        minHeight: "50vh",
-        py: "6vh",
+        width: "100%",
+        minHeight: "50svh",
+        py: "8svh",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        gap: "4svh",
+        textAlign: "center",
       }}
     >
-      <Box
-        sx={{
-          height: "100%",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          textAlign: "center",
-          gap: "1.5vh",
-        }}
-      >
-        <img
-          src="https://res.cloudinary.com/dqqbiacuz/image/upload/v1767497101/Vector_g3uqp2.png"
-          alt="gift"
+      <img
+        src="https://res.cloudinary.com/dqqbiacuz/image/upload/v1767497101/Vector_g3uqp2.png"
+        alt="gift"
+      />
+
+      <Box sx={{ width: "80%" }}>
+        <Box
+          sx={{
+            width: "100%",
+            height: "2px",
+            backgroundColor: "#F0ECE3",
+            my: 2,
+          }}
         />
+
+        <Typography
+          sx={{
+            fontSize: 20,
+            fontWeight: 300,
+            color: "#F0ECE3",
+          }}
+        >
+          Si deseas hacernos un regalo, te dejamos nuestros datos
+        </Typography>
 
         <Box
           sx={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "0.8vh",
-            width: "80%",
-            alignItems: "center",
+            width: "100%",
+            height: "2px",
+            backgroundColor: "#F0ECE3",
+            my: 2,
           }}
-        >
-          <Box
-            sx={{
-              width: "95%",
-              height: "2px",
-              backgroundColor: "#F0ECE3",
-              my: "10px",
-            }}
-          />
-
-          <Typography
-            sx={{
-              fontSize: "20px",
-              fontWeight: 300,
-              color: "#F0ECE3",
-              mb: "2.5vh",
-            }}
-          >
-            Si deseas hacernos un regalo, te dejamos nuestros datos
-          </Typography>
-
-          <Box
-            sx={{
-              width: "95%",
-              height: "2px",
-              backgroundColor: "#F0ECE3",
-              my: "10px",
-            }}
-          />
-        </Box>
-
-        <Button
-          variant="contained"
-          sx={{
-            color: "#787878",
-            background: "#F0ECE3",
-            mt: "1.5vh",
-            borderRadius: "20px",
-          }}
-          onClick={handleOpen}
-        >
-          VER DATOS BANCARIOS
-        </Button>
+        />
       </Box>
 
-      {/* Modal */}
-      <Modal open={open} onClose={handleClose}>
+      <Button
+        variant="contained"
+        sx={{
+          color: "#787878",
+          background: "#F0ECE3",
+          borderRadius: "20px",
+          px: 3,
+        }}
+        onClick={() => setOpen(true)}
+      >
+        VER DATOS BANCARIOS
+      </Button>
+
+      <Modal open={open} onClose={() => setOpen(false)}>
         <Box
           sx={{
             position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
+            inset: 0,
+            m: "auto",
             width: "90vw",
-            height: "90vh",
+            height: "90svh",
             bgcolor: "white",
-            p: 2,
-            boxShadow: 24,
             borderRadius: "10px",
-            textAlign: "center",
             display: "flex",
             flexDirection: "column",
-            justifyContent: "center",
             alignItems: "center",
+            justifyContent: "center",
+            p: 2,
           }}
         >
           <img
@@ -112,13 +90,12 @@ const Gift = ({ imgCbu }) => {
           />
 
           <Button
-            onClick={handleClose}
             sx={{
-              mt: "10px",
+              mt: 2,
               background: "#8C8C8C",
               color: "white",
-              ":hover": { background: "#6C6C6C" },
             }}
+            onClick={() => setOpen(false)}
           >
             Cerrar
           </Button>

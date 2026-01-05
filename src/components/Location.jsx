@@ -8,7 +8,7 @@ const Divider = () => (
       width: "10%",
       height: "2px",
       backgroundColor: "#F0ECE3",
-      my: "10px",
+      my: "12px",
       mx: "auto",
     }}
   />
@@ -20,17 +20,17 @@ const Location = ({ data, bounce }) => {
       id="location"
       sx={{
         bgcolor: "#ADA6A0",
+        width: "100%",
+        minHeight: "60svh",
+        py: "8svh",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        justifyContent: "center",
         textAlign: "center",
-        gap: "4vh",
-        minHeight: "60vh",
-        py: "6vh",
+        gap: "6svh",
       }}
     >
-      <Box sx={{ width: "100%" }}>
+      <Box>
         <CalendarMonthTwoToneIcon
           sx={{
             color: "#FBF8F1",
@@ -42,18 +42,18 @@ const Location = ({ data, bounce }) => {
           }}
         />
 
-        <Typography sx={{ color: "#FBF8F1", fontSize: "18px", fontWeight: 300 }}>
+        <Typography sx={{ color: "#FBF8F1", fontSize: 18, fontWeight: 300 }}>
           DOMINGO 29 de Marzo de 2026
         </Typography>
 
         <Divider />
 
-        <Typography sx={{ color: "#FBF8F1", fontSize: "18px", fontWeight: 300 }}>
+        <Typography sx={{ color: "#FBF8F1", fontSize: 18, fontWeight: 300 }}>
           12:00 hs
         </Typography>
       </Box>
 
-      <Box sx={{ width: "100%" }}>
+      <Box>
         <LocationOnTwoToneIcon
           sx={{
             color: "#FBF8F1",
@@ -65,13 +65,13 @@ const Location = ({ data, bounce }) => {
           }}
         />
 
-        <Typography sx={{ color: "#FBF8F1", fontSize: "20px", fontWeight: 300 }}>
+        <Typography sx={{ color: "#FBF8F1", fontSize: 20, fontWeight: 300 }}>
           Puro Pilar
         </Typography>
 
         <Divider />
 
-        <Typography sx={{ color: "#FBF8F1", fontSize: "20px", fontWeight: 300 }}>
+        <Typography sx={{ color: "#FBF8F1", fontSize: 20, fontWeight: 300 }}>
           Dr. Jose Penna 170, Pilar
         </Typography>
       </Box>
@@ -87,8 +87,8 @@ const Location = ({ data, bounce }) => {
           sx={{
             color: "#4F4F4F",
             background: "#F0ECE3",
-            mt: "1.5vh",
             borderRadius: "20px",
+            px: 3,
           }}
         >
           Como llegar
