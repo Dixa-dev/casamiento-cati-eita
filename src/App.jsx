@@ -21,7 +21,7 @@ const db = {
   confirmationForm:
     "https://docs.google.com/forms/d/e/1FAIpQLSe01rgpgb8P4N_N279ewrMXFI18iNgxpgQQortRwq8mIGTZ4Q/viewform",
   imgBank:
-    "https://res.cloudinary.com/dqqbiacuz/image/upload/v1767496792/Group_1_umx4lf.png",
+    "https://res.cloudinary.com/dqqbiacuz/image/upload/v1767577227/Group_1_1_fqyfw3.png",
   SpotifyList:
     "https://open.spotify.com/playlist/7bITT7j2PHK5vpdAFWz422?si=wxwRgAs9RImHIng83QaasQ&pt=c1171f176fabcda690ed425779da70e1&pi=zl4FyftWQEmjK",
   instagram: "https://www.instagram.com/bodacatiyeitan?igsh=YThkZjM0bzhnMXFy",
@@ -86,7 +86,7 @@ function App() {
       {/* Reproductor de audio oculto */}
       <audio ref={audioRef} loop>
         <source
-          src="https://res.cloudinary.com/dqqbiacuz/video/upload/v1741745037/Goo_Goo_Muck_c5lsm7.mp3"
+          src="https://res.cloudinary.com/dqqbiacuz/video/upload/v1767577496/Alex_Warren_-_Ordinary_Sub._Espa%C3%B1ol_Lyrics_-_sweetblue._as04up.mp3"
           type="audio/mp3"
         />
       </audio>
