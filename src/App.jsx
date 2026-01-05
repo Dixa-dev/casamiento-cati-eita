@@ -8,6 +8,9 @@ import Location from "./components/Location";
 import Confirmation from "./components/Confirmation";
 import Gift from "./components/Gift";
 import Song from "./components/Song";
+import Dresscode from "./components/Desscode";
+import Photo from "./components/Photo";
+import Footer from "./components/Footer";
 
 const db = {
   name: "Cati & Eitan",
@@ -21,6 +24,7 @@ const db = {
     "https://res.cloudinary.com/dqqbiacuz/image/upload/v1767496792/Group_1_umx4lf.png",
   SpotifyList:
     "https://open.spotify.com/playlist/7bITT7j2PHK5vpdAFWz422?si=wxwRgAs9RImHIng83QaasQ&pt=c1171f176fabcda690ed425779da70e1&pi=zl4FyftWQEmjK",
+  instagram: "https://www.instagram.com/bodacatiyeitan?igsh=YThkZjM0bzhnMXFy",
 };
 
 const bounce = keyframes`
@@ -93,7 +97,10 @@ function App() {
       <Location data={data} bounce={bounce} />
       <Confirmation confirmationForm={data.confirmationForm} />
       <Gift imgCbu={data.imgBank} />
-      <Song SongList={data.SpotifyList}/>
+      <Song SongList={data.SpotifyList} />
+      <Dresscode />
+      <Photo instagram={data.instagram} />
+      <Footer />
     </ThemeProvider>
   );
 }
