@@ -11,7 +11,8 @@ const Gift = ({ imgCbu }) => {
     <Box
       sx={{
         bgcolor: "#ADA6A0",
-        height: "50vh",
+        minHeight: "50vh",
+        py: "6vh",
       }}
     >
       <Box
@@ -44,28 +45,27 @@ const Gift = ({ imgCbu }) => {
               width: "95%",
               height: "2px",
               backgroundColor: "#F0ECE3",
-              margin: "10px 0",
+              my: "10px",
             }}
           />
-          <Box>
-            <Typography
-              sx={{
-                fontSize: "20px",
-                fontWeight: "light",
-                color: "#F0ECE3",
-                fontStyle: "normal",
-                marginBottom: "2.5vh",
-              }}
-            >
-              Si deseas hacernos un regalo, te dejamos nuestros datos{" "}
-            </Typography>
-          </Box>
+
+          <Typography
+            sx={{
+              fontSize: "20px",
+              fontWeight: 300,
+              color: "#F0ECE3",
+              mb: "2.5vh",
+            }}
+          >
+            Si deseas hacernos un regalo, te dejamos nuestros datos
+          </Typography>
+
           <Box
             sx={{
               width: "95%",
               height: "2px",
               backgroundColor: "#F0ECE3",
-              margin: "10px 0",
+              my: "10px",
             }}
           />
         </Box>
@@ -75,14 +75,13 @@ const Gift = ({ imgCbu }) => {
           sx={{
             color: "#787878",
             background: "#F0ECE3",
-            marginTop: "1.5vh",
+            mt: "1.5vh",
             borderRadius: "20px",
           }}
-           onClick={handleOpen}
+          onClick={handleOpen}
         >
           VER DATOS BANCARIOS
         </Button>
-       
       </Box>
 
       {/* Modal */}
@@ -95,7 +94,7 @@ const Gift = ({ imgCbu }) => {
             transform: "translate(-50%, -50%)",
             width: "90vw",
             height: "90vh",
-            bgcolor: "white o",
+            bgcolor: "white",
             p: 2,
             boxShadow: 24,
             borderRadius: "10px",
@@ -107,14 +106,15 @@ const Gift = ({ imgCbu }) => {
           }}
         >
           <img
-            src="https://res.cloudinary.com/dqqbiacuz/image/upload/v1767496792/Group_1_umx4lf.png"
+            src={imgCbu}
             alt="CBU"
             style={{ width: "100%", maxWidth: "300px" }}
           />
+
           <Button
             onClick={handleClose}
             sx={{
-              marginTop: "10px",
+              mt: "10px",
               background: "#8C8C8C",
               color: "white",
               ":hover": { background: "#6C6C6C" },

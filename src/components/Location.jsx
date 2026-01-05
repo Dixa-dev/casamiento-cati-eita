@@ -23,10 +23,11 @@ const Location = ({ data, bounce }) => {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        height: "60vh",
         justifyContent: "center",
         textAlign: "center",
         gap: "4vh",
+        minHeight: "60vh",
+        py: "6vh",
       }}
     >
       <Box sx={{ width: "100%" }}>
@@ -86,7 +87,7 @@ const Location = ({ data, bounce }) => {
           sx={{
             color: "#4F4F4F",
             background: "#F0ECE3",
-            marginTop: "1.5vh",
+            mt: "1.5vh",
             borderRadius: "20px",
           }}
         >
