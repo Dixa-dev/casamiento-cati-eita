@@ -11,15 +11,7 @@ const Footer = () => {
         alignItems: "center",
       }}
     >
-      <Typography
-        sx={{
-          fontFamily: "Parisienne",
-          fontSize: "1.2rem",
-          color: "#FBF8F1",
-        }}
-      >
-        ¡Gracias por acompañarnos en este momento!
-      </Typography>
+      <img src="https://res.cloudinary.com/dqqbiacuz/image/upload/v1767752910/Gracias_por_acompa%C3%B1arnos_en_este_momento_rywkvg.png" alt="footer"/>
     </Box>
   );
 };
