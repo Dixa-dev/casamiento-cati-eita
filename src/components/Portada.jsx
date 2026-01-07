@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import KeyboardArrowDownRoundedIcon from "@mui/icons-material/KeyboardArrowDownRounded";
 
 const Portada = ({ data }) => {
@@ -18,7 +18,7 @@ const Portada = ({ data }) => {
         overflow: "hidden",
       }}
     >
-      {/* Fondo */}
+      {/* FONDO */}
       <Box
         component="img"
         src={data.imgCover}
@@ -32,16 +32,16 @@ const Portada = ({ data }) => {
         }}
       />
 
-      {/* Overlay */}
+      {/* OVERLAY */}
       <Box
         sx={{
           position: "absolute",
           inset: 0,
-          backgroundColor: "rgba(255,255,255,0.05)",
+          backgroundColor: "rgba(255,255,255,0.15)",
         }}
       />
 
-      {/* Bloque central */}
+      {/* BLOQUE CENTRAL */}
       <Box
         sx={{
           position: "absolute",
@@ -51,51 +51,35 @@ const Portada = ({ data }) => {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
+          zIndex: 2,
           pointerEvents: "none",
         }}
       >
+        {/* NOS CASAMOS */}
         <Box
           component="img"
           src="https://res.cloudinary.com/dqqbiacuz/image/upload/v1767401478/NOS_CASAMOS_wypygl.png"
           alt="Nos casamos"
-          sx={{ width: { xs: 220, sm: 260 }, mb: 3 }}
+          sx={{
+            width: { xs: 200, sm: 230 },
+            height: "auto",
+            mb: 1.5,
+          }}
         />
 
-        <Typography
+        {/* CATI & EITAN */}
+        <Box
+          component="img"
+          src="https://res.cloudinary.com/dqqbiacuz/image/upload/v1767573922/Cati_Eitan_mmllng.png"
+          alt="Cati & Eitan"
           sx={{
-            fontFamily: "Parisienne",
-            fontSize: 48,
-            lineHeight: 1.05,
-            color: "#423636",
+            width: { xs: 100, sm: 110 },
+            height: "auto",
           }}
-        >
-          Cati
-        </Typography>
-
-        <Typography
-          sx={{
-            fontFamily: "Parisienne",
-            fontSize: 28,
-            lineHeight: 1.2,
-            color: "#423636",
-          }}
-        >
-          &
-        </Typography>
-
-        <Typography
-          sx={{
-            fontFamily: "Parisienne",
-            fontSize: 48,
-            lineHeight: 1.05,
-            color: "#423636",
-          }}
-        >
-          Eitan
-        </Typography>
+        />
       </Box>
 
-      {/* Flecha */}
+      {/* FLECHA */}
       <Box
         sx={{
           position: "absolute",
@@ -103,6 +87,7 @@ const Portada = ({ data }) => {
           width: "100%",
           display: "flex",
           justifyContent: "center",
+          zIndex: 3,
         }}
       >
         <KeyboardArrowDownRoundedIcon
@@ -113,9 +98,15 @@ const Portada = ({ data }) => {
             color: "rgba(0,0,0,0.7)",
             animation: "bounce 2s infinite",
             "@keyframes bounce": {
-              "0%, 20%, 50%, 80%, 100%": { transform: "translateY(0)" },
-              "40%": { transform: "translateY(8px)" },
-              "60%": { transform: "translateY(4px)" },
+              "0%, 20%, 50%, 80%, 100%": {
+                transform: "translateY(0)",
+              },
+              "40%": {
+                transform: "translateY(8px)",
+              },
+              "60%": {
+                transform: "translateY(4px)",
+              },
             },
           }}
         />
