@@ -21,3 +21,10 @@ body {
   font-family: "Montserrat", sans-serif;
   background-color: #f0f0f0;
 }
+
+@font-face {
+  font-family: "TEST_ANDROID";
+  src: url("https://fonts.gstatic.com/s/indieflower/v22/m8JVjfNVeKWVnh3QMuKkFcZVaUuH.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}

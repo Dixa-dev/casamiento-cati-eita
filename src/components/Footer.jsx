@@ -20,6 +20,17 @@ const Footer = () => {
       >
         ¡Gracias por acompañarnos en este momento!
       </Typography>
+
+      <Typography
+  sx={{
+    fontFamily: "TEST_ANDROID",
+    fontSize: "32px",
+    color: "red",
+  }}
+>
+  TEST ANDROID
+</Typography>
+
     </Box>
   );
 };
