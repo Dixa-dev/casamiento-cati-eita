@@ -58,15 +58,21 @@ const Portada = ({ data }) => {
           sx={{ width: { xs: 220, sm: 260 }, mb: 3 }}
         />
 
-        <Typography sx={{ fontFamily: "Hattinand", fontSize: 48, color: "#423636" }}>
+        <Typography
+          sx={{ fontFamily: "Hattinand", fontSize: 48, color: "#423636" }}
+        >
           Cati
         </Typography>
 
-        <Typography sx={{ fontFamily: "Hattinand", fontSize: 28, color: "#423636" }}>
+        <Typography
+          sx={{ fontFamily: "Hattinand", fontSize: 28, color: "#423636" }}
+        >
           &
         </Typography>
 
-        <Typography sx={{ fontFamily: "Hattinand", fontSize: 48, color: "#423636" }}>
+        <Typography
+          sx={{ fontFamily: "Hattinand", fontSize: 48, color: "#423636" }}
+        >
           Eitan
         </Typography>
       </Box>

@@ -7,9 +7,10 @@
 }
 
 @font-face {
-  font-family: "Hattinand";
-  src: url("/fonts/hattinand-regular.woff2") format("woff2");
-  font-weight: 400;
+  font-family: 'Hattinand';
+  src: url('/fonts/Hattinand.woff2') format('woff2'),
+       url('/fonts/Hattinand.woff') format('woff');
+  font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
