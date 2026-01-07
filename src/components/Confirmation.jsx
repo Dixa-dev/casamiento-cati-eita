@@ -1,6 +1,6 @@
 import { Box, Button, Link, Typography } from "@mui/material";
 
-const Confirmation = ({confirmationForm}) => {
+const Confirmation = ({ confirmationForm }) => {
   return (
     <Box
       sx={{
@@ -8,14 +8,13 @@ const Confirmation = ({confirmationForm}) => {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        height: "90vh",
-        // justifyContent: "center",
+        minHeight: "90vh",
         textAlign: "center",
       }}
     >
       <Box
         sx={{
-          height: "50vh",
+          minHeight: "50vh",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
@@ -25,16 +24,22 @@ const Confirmation = ({confirmationForm}) => {
         }}
       >
         <Box>
-          <img src="https://res.cloudinary.com/dqqbiacuz/image/upload/v1767399170/Rectangle_13_eo1o17.png" />
+          <img
+            src="https://res.cloudinary.com/dqqbiacuz/image/upload/v1767399170/Rectangle_13_eo1o17.png"
+            alt="decoracion"
+          />
         </Box>
       </Box>
 
-      <Box sx={{
-        height:"100vh",
-        display:"flex",
-        flexDirection:"column",
-        justifyContent:"space-evenly"
-      }}>
+      <Box
+        sx={{
+          width: "100%",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          gap: "4vh",
+        }}
+      >
         <Box>
           <img
             src="https://res.cloudinary.com/dqqbiacuz/image/upload/v1767495148/hojs_1_wprcna.png"
@@ -48,13 +53,13 @@ const Confirmation = ({confirmationForm}) => {
             width: "75%",
             fontWeight: "regular",
             color: "#ADA6A0",
-            mx: "auto", // 👈 ESTO lo centra horizontalmente
+            mx: "auto",
             textAlign: "center",
-            marginTop:"-3vh"
           }}
         >
           ¿Venis a festejar? ¡Confirmá tu asistencia!
         </Typography>
+
         <Link
           href={confirmationForm}
           target="_blank"
@@ -66,10 +71,11 @@ const Confirmation = ({confirmationForm}) => {
             sx={{
               color: "#F0ECE3",
               background: "#ADA6A0",
-              marginTop: "1.5vh",
-              borderRadius:"20px"
+              borderRadius: "20px",
+              px: 4,
             }}
-          >Avisanos
+          >
+            Avisanos
           </Button>
         </Link>
       </Box>
