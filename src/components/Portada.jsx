@@ -18,7 +18,6 @@ const Portada = ({ data }) => {
         overflow: "hidden",
       }}
     >
-      {/* Fondo */}
       <Box
         component="img"
         src={data.imgCover}
@@ -32,7 +31,6 @@ const Portada = ({ data }) => {
         }}
       />
 
-      {/* Overlay */}
       <Box
         sx={{
           position: "absolute",
@@ -41,11 +39,10 @@ const Portada = ({ data }) => {
         }}
       />
 
-      {/* BLOQUE CENTRAL */}
       <Box
         sx={{
           position: "absolute",
-          top: "62%", // ⬇️ más abajo
+          top: "62%",
           left: "50%",
           transform: "translate(-50%, -50%)",
           display: "flex",
@@ -54,66 +51,33 @@ const Portada = ({ data }) => {
           pointerEvents: "none",
         }}
       >
-        {/* IMAGEN NOS CASAMOS */}
         <Box
           component="img"
           src="https://res.cloudinary.com/dqqbiacuz/image/upload/v1767401478/NOS_CASAMOS_wypygl.png"
           alt="Nos casamos"
-          sx={{
-            width: { xs: 220, sm: 260 },
-            height: "auto",
-            mb: 3, // ⬅️ más aire entre imagen y nombres
-          }}
+          sx={{ width: { xs: 220, sm: 260 }, mb: 3 }}
         />
 
-        {/* NOMBRES */}
-        <Box sx={{ textAlign: "center" }}>
-          <Typography
-            sx={{
-              fontFamily: "'Hattinand', cursive !important",
-              fontSize: "48px",
-              lineHeight: 1.05,
-              mb: 0.8, // ⬅️ espacio abajo
-              color: "#423636",
-            }}
-          >
-            Cati
-          </Typography>
+        <Typography sx={{ fontFamily: "Hattinand", fontSize: 48, color: "#423636" }}>
+          Cati
+        </Typography>
 
-          <Typography
-            sx={{
-              fontFamily: "'Hattinand', cursive",
-              fontSize: "28px",
-              lineHeight: 1.4,
-              mb: 0.8, // ⬅️ separa más del nombre de abajo
-              color: "#423636",
-            }}
-          >
-            &
-          </Typography>
+        <Typography sx={{ fontFamily: "Hattinand", fontSize: 28, color: "#423636" }}>
+          &
+        </Typography>
 
-          <Typography
-            sx={{
-              fontFamily: "'Hattinand', cursive",
-              fontSize: "48px",
-              lineHeight: 1.05,
-              color: "#423636",
-            }}
-          >
-            Eitan
-          </Typography>
-        </Box>
+        <Typography sx={{ fontFamily: "Hattinand", fontSize: 48, color: "#423636" }}>
+          Eitan
+        </Typography>
       </Box>
 
-      {/* Flecha */}
       <Box
         sx={{
           position: "absolute",
-          bottom: 24,
+          bottom: "5vh",
           width: "100%",
           display: "flex",
           justifyContent: "center",
-          marginBottom:"5vh"
         }}
       >
         <KeyboardArrowDownRoundedIcon

@@ -7,14 +7,13 @@ const Footer = () => {
         bgcolor: "#ADA6A0",
         height: "10vh",
         display: "flex",
-        flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
       }}
     >
       <Typography
         sx={{
-          fontFamily: "Hattinand, serif !important",
+          fontFamily: "Hattinand",
           fontSize: "1.1rem",
           color: "#FBF8F1",
         }}

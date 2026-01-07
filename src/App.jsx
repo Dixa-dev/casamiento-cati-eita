@@ -1,8 +1,8 @@
-import { Box, keyframes, ThemeProvider, IconButton } from "@mui/material";
-import Portada from "./components/Portada";
+import { Box, keyframes, IconButton } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
-import theme from "./theme";
 import { VolumeOff, VolumeUp } from "@mui/icons-material";
+
+import Portada from "./components/Portada";
 import Countdown from "./components/Countdown";
 import Location from "./components/Location";
 import Confirmation from "./components/Confirmation";
@@ -23,8 +23,8 @@ const db = {
   imgBank:
     "https://res.cloudinary.com/dqqbiacuz/image/upload/v1767577227/Group_1_1_fqyfw3.png",
   SpotifyList:
-    "https://open.spotify.com/playlist/7bITT7j2PHK5vpdAFWz422?si=wxwRgAs9RImHIng83QaasQ&pt=c1171f176fabcda690ed425779da70e1&pi=zl4FyftWQEmjK",
-  instagram: "https://www.instagram.com/bodacatiyeitan?igsh=YThkZjM0bzhnMXFy",
+    "https://open.spotify.com/playlist/7bITT7j2PHK5vpdAFWz422",
+  instagram: "https://www.instagram.com/bodacatiyeitan",
 };
 
 const bounce = keyframes`
@@ -37,53 +37,37 @@ const bounce = keyframes`
   60% {
     transform: translateY(-5px);
   }
-  `;
+`;
 
 function App() {
-  const [data] = useState(db);
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef(null);
 
   useEffect(() => {
-    if (audioRef.current) {
-      isPlaying ? audioRef.current.play() : audioRef.current.pause();
-    }
+    if (!audioRef.current) return;
+    isPlaying ? audioRef.current.play() : audioRef.current.pause();
   }, [isPlaying]);
 
-  // Función para activar la música al hacer scroll
-  const handleScrollClick = () => {
-    if (!isPlaying) {
-      setIsPlaying(true);
-    }
-  };
-
   return (
-    <ThemeProvider theme={theme}>
-      {/* Ícono de megáfono para controlar la música */}
+    <>
+      {/* Control música */}
       <Box
         sx={{
           position: "fixed",
           bottom: 20,
           right: 20,
           zIndex: 1000,
-          backgroundColor: "rgba(0, 0, 0, 0.6)",
+          backgroundColor: "rgba(0,0,0,0.6)",
           borderRadius: "50%",
-          padding: "6px",
+          p: "6px",
         }}
       >
-        <IconButton
-          onClick={() => setIsPlaying(!isPlaying)}
-          sx={{ color: "white" }}
-        >
-          {isPlaying ? (
-            <VolumeUp fontSize="medium" />
-          ) : (
-            <VolumeOff fontSize="medium" />
-          )}
+        <IconButton onClick={() => setIsPlaying(!isPlaying)} sx={{ color: "#fff" }}>
+          {isPlaying ? <VolumeUp /> : <VolumeOff />}
         </IconButton>
       </Box>
 
-      {/* Reproductor de audio oculto */}
+      {/* Audio */}
       <audio ref={audioRef} loop>
         <source
           src="https://res.cloudinary.com/dqqbiacuz/video/upload/v1767577496/Alex_Warren_-_Ordinary_Sub._Espa%C3%B1ol_Lyrics_-_sweetblue._as04up.mp3"
@@ -91,17 +75,16 @@ function App() {
         />
       </audio>
 
-      {/* Pasamos la función al componente de Portada para activarla en el scroll */}
-      <Portada data={data} bounce={bounce} onScrollClick={handleScrollClick} />
-      <Countdown targetDate={data.date} />
-      <Location data={data} bounce={bounce} />
-      <Confirmation confirmationForm={data.confirmationForm} />
-      <Gift imgCbu={data.imgBank} />
-      <Song SongList={data.SpotifyList} />
+      <Portada data={db} bounce={bounce} />
+      <Countdown targetDate={db.date} />
+      <Location data={db} bounce={bounce} />
+      <Confirmation confirmationForm={db.confirmationForm} />
+      <Gift imgCbu={db.imgBank} />
+      <Song SongList={db.SpotifyList} />
       <Dresscode />
-      <Photo instagram={data.instagram} />
+      <Photo instagram={db.instagram} />
       <Footer />
-    </ThemeProvider>
+    </>
   );
 }
 
