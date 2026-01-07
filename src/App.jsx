@@ -1,4 +1,4 @@
-import { Box, keyframes, IconButton } from "@mui/material";
+import { Box, IconButton } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
 import { VolumeOff, VolumeUp } from "@mui/icons-material";
 
@@ -27,30 +27,57 @@ const db = {
   instagram: "https://www.instagram.com/bodacatiyeitan",
 };
 
-const bounce = keyframes`
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-10px);
-  }
-  60% {
-    transform: translateY(-5px);
-  }
-`;
-
 function App() {
-  const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [hasInteracted, setHasInteracted] = useState(false);
 
-  useEffect(() => {
+  // Arranca música SOLO después de la primera interacción
+  const startMusic = () => {
     if (!audioRef.current) return;
-    isPlaying ? audioRef.current.play() : audioRef.current.pause();
-  }, [isPlaying]);
+
+    audioRef.current.play().then(() => {
+      setIsPlaying(true);
+      setHasInteracted(true);
+    }).catch(() => {
+      // iOS bloquea hasta interacción real
+    });
+  };
+
+  // Escuchamos primer click / touch / scroll
+  useEffect(() => {
+    const handleFirstInteraction = () => {
+      if (!hasInteracted) {
+        startMusic();
+      }
+    };
+
+    window.addEventListener("click", handleFirstInteraction, { once: true });
+    window.addEventListener("touchstart", handleFirstInteraction, { once: true });
+    window.addEventListener("scroll", handleFirstInteraction, { once: true });
+
+    return () => {
+      window.removeEventListener("click", handleFirstInteraction);
+      window.removeEventListener("touchstart", handleFirstInteraction);
+      window.removeEventListener("scroll", handleFirstInteraction);
+    };
+  }, [hasInteracted]);
+
+  const toggleMusic = () => {
+    if (!audioRef.current) return;
+
+    if (isPlaying) {
+      audioRef.current.pause();
+      setIsPlaying(false);
+    } else {
+      audioRef.current.play();
+      setIsPlaying(true);
+    }
+  };
 
   return (
     <>
-      {/* Control música */}
+      {/* BOTÓN DE AUDIO */}
       <Box
         sx={{
           position: "fixed",
@@ -62,12 +89,12 @@ function App() {
           p: "6px",
         }}
       >
-        <IconButton onClick={() => setIsPlaying(!isPlaying)} sx={{ color: "#fff" }}>
+        <IconButton onClick={toggleMusic} sx={{ color: "#fff" }}>
           {isPlaying ? <VolumeUp /> : <VolumeOff />}
         </IconButton>
       </Box>
 
-      {/* Audio */}
+      {/* AUDIO */}
       <audio ref={audioRef} loop>
         <source
           src="https://res.cloudinary.com/dqqbiacuz/video/upload/v1767577496/Alex_Warren_-_Ordinary_Sub._Espa%C3%B1ol_Lyrics_-_sweetblue._as04up.mp3"
@@ -75,9 +102,9 @@ function App() {
         />
       </audio>
 
-      <Portada data={db} bounce={bounce} />
+      <Portada data={db} />
       <Countdown targetDate={db.date} />
-      <Location data={db} bounce={bounce} />
+      <Location data={db} />
       <Confirmation confirmationForm={db.confirmationForm} />
       <Gift imgCbu={db.imgBank} />
       <Song SongList={db.SpotifyList} />
