@@ -83,7 +83,7 @@ const Portada = ({ data }) => {
       <Box
         sx={{
           position: "absolute",
-          bottom: "5vh",
+          bottom: "10vh",
           width: "100%",
           display: "flex",
           justifyContent: "center",
