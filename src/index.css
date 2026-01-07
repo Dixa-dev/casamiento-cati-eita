@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Parisienne&display=swap");
 
 * {
   margin: 0;
@@ -6,25 +6,8 @@
   box-sizing: border-box;
 }
 
-@font-face {
-  font-family: "Hattinand";
-  src:
-    url("/fonts/Hattinand.woff2") format("woff2"),
-    url("/fonts/Hattinand.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
-}
-
 body {
   margin: 0;
   font-family: "Montserrat", sans-serif;
   background-color: #f0f0f0;
-}
-
-@font-face {
-  font-family: "TEST_ANDROID";
-  src: url("https://fonts.gstatic.com/s/indieflower/v22/m8JVjfNVeKWVnh3QMuKkFcZVaUuH.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
 }

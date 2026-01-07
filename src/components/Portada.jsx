@@ -18,6 +18,7 @@ const Portada = ({ data }) => {
         overflow: "hidden",
       }}
     >
+      {/* Fondo */}
       <Box
         component="img"
         src={data.imgCover}
@@ -31,6 +32,7 @@ const Portada = ({ data }) => {
         }}
       />
 
+      {/* Overlay */}
       <Box
         sx={{
           position: "absolute",
@@ -39,6 +41,7 @@ const Portada = ({ data }) => {
         }}
       />
 
+      {/* Bloque central */}
       <Box
         sx={{
           position: "absolute",
@@ -59,24 +62,40 @@ const Portada = ({ data }) => {
         />
 
         <Typography
-          sx={{ fontFamily: "Hattinand", fontSize: 48, color: "#423636" }}
+          sx={{
+            fontFamily: "Parisienne",
+            fontSize: 48,
+            lineHeight: 1.05,
+            color: "#423636",
+          }}
         >
           Cati
         </Typography>
 
         <Typography
-          sx={{ fontFamily: "Hattinand", fontSize: 28, color: "#423636" }}
+          sx={{
+            fontFamily: "Parisienne",
+            fontSize: 28,
+            lineHeight: 1.2,
+            color: "#423636",
+          }}
         >
           &
         </Typography>
 
         <Typography
-          sx={{ fontFamily: "Hattinand", fontSize: 48, color: "#423636" }}
+          sx={{
+            fontFamily: "Parisienne",
+            fontSize: 48,
+            lineHeight: 1.05,
+            color: "#423636",
+          }}
         >
           Eitan
         </Typography>
       </Box>
 
+      {/* Flecha */}
       <Box
         sx={{
           position: "absolute",

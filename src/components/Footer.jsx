@@ -13,24 +13,13 @@ const Footer = () => {
     >
       <Typography
         sx={{
-          fontFamily: "Hattinand",
-          fontSize: "1.1rem",
+          fontFamily: "Parisienne",
+          fontSize: "1.2rem",
           color: "#FBF8F1",
         }}
       >
         ¡Gracias por acompañarnos en este momento!
       </Typography>
-
-      <Typography
-  sx={{
-    fontFamily: "TEST_ANDROID",
-    fontSize: "32px",
-    color: "red",
-  }}
->
-  TEST ANDROID
-</Typography>
-
     </Box>
   );
 };
