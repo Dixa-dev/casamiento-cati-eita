@@ -113,6 +113,7 @@ const Portada = ({ data }) => {
           width: "100%",
           display: "flex",
           justifyContent: "center",
+          marginBottom:"5vh"
         }}
       >
         <KeyboardArrowDownRoundedIcon
