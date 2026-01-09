@@ -23,7 +23,7 @@ const db = {
   imgBank:
     "https://res.cloudinary.com/dqqbiacuz/image/upload/v1767577227/Group_1_1_fqyfw3.png",
   SpotifyList:
-    "https://open.spotify.com/playlist/7bITT7j2PHK5vpdAFWz422",
+    "https://open.spotify.com/playlist/7bITT7j2PHK5vpdAFWz422?si=r79OCxafR5asgk6rc5CqgA&pt=231e7c5aebbb46b91581f1198d08b122&pi=u_rqoVohSsGxT",
   instagram: "https://www.instagram.com/bodacatiyeitan",
 };
 
@@ -36,12 +36,15 @@ function App() {
   const startMusic = () => {
     if (!audioRef.current) return;
 
-    audioRef.current.play().then(() => {
-      setIsPlaying(true);
-      setHasInteracted(true);
-    }).catch(() => {
-      // iOS bloquea hasta interacción real
-    });
+    audioRef.current
+      .play()
+      .then(() => {
+        setIsPlaying(true);
+        setHasInteracted(true);
+      })
+      .catch(() => {
+        // iOS bloquea hasta interacción real
+      });
   };
 
   // Escuchamos primer click / touch / scroll
@@ -53,7 +56,9 @@ function App() {
     };
 
     window.addEventListener("click", handleFirstInteraction, { once: true });
-    window.addEventListener("touchstart", handleFirstInteraction, { once: true });
+    window.addEventListener("touchstart", handleFirstInteraction, {
+      once: true,
+    });
     window.addEventListener("scroll", handleFirstInteraction, { once: true });
 
     return () => {
@@ -73,6 +78,21 @@ function App() {
       audioRef.current.play();
       setIsPlaying(true);
     }
+  };
+
+  const bounceAnimation = {
+    animation: "bounce 2s infinite",
+    "@keyframes bounce": {
+      "0%, 20%, 50%, 80%, 100%": {
+        transform: "translateY(0)",
+      },
+      "40%": {
+        transform: "translateY(8px)",
+      },
+      "60%": {
+        transform: "translateY(4px)",
+      },
+    },
   };
 
   return (
@@ -102,12 +122,12 @@ function App() {
         />
       </audio>
 
-      <Portada data={db} />
+      <Portada data={db} bounce={bounceAnimation} />
       <Countdown targetDate={db.date} />
-      <Location data={db} />
+      <Location data={db} bounce={bounceAnimation} />
       <Confirmation confirmationForm={db.confirmationForm} />
       <Gift imgCbu={db.imgBank} />
-      <Song SongList={db.SpotifyList} />
+      <Song SongList={db.SpotifyList} bounce={bounceAnimation} />
       <Dresscode />
       <Photo instagram={db.instagram} />
       <Footer />

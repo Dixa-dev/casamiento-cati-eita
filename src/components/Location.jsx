@@ -1,6 +1,4 @@
 import { Box, Button, Link, Typography } from "@mui/material";
-import CalendarMonthTwoToneIcon from "@mui/icons-material/CalendarMonthTwoTone";
-import LocationOnTwoToneIcon from "@mui/icons-material/LocationOnTwoTone";
 
 const Divider = () => (
   <Box
@@ -30,52 +28,47 @@ const Location = ({ data, bounce }) => {
         gap: "6svh",
       }}
     >
-      <Box>
-        <CalendarMonthTwoToneIcon
-          sx={{
-            color: "#FBF8F1",
-            fontSize: "50px",
-            fill: "none",
-            stroke: "#FBF8F1",
-            strokeWidth: 0.5,
-            animation: `${bounce} 2s infinite`,
-          }}
-        />
+      {/* FECHA */}
+      <Box sx={{ display: "flex", flexDirection: "column", gap: "1vh" }}>
+        <Box sx={{ ...bounce }}>
+          <img
+            src="https://res.cloudinary.com/dqqbiacuz/image/upload/v1767922502/Icono_calendario_ulbgp3.png"
+            alt="calendar"
+          />
+        </Box>
 
-        <Typography sx={{ color: "#FBF8F1", fontSize: 18, fontWeight: 300 }}>
+        <Typography sx={{ color: "#F0ECE3", fontSize: 18, fontWeight: 300 }}>
           DOMINGO 29 de Marzo de 2026
         </Typography>
 
         <Divider />
 
-        <Typography sx={{ color: "#FBF8F1", fontSize: 18, fontWeight: 300 }}>
+        <Typography sx={{ color: "#F0ECE3", fontSize: 18, fontWeight: 300 }}>
           12:00 hs
         </Typography>
       </Box>
 
-      <Box>
-        <LocationOnTwoToneIcon
-          sx={{
-            color: "#FBF8F1",
-            fontSize: "50px",
-            fill: "none",
-            stroke: "#FBF8F1",
-            strokeWidth: 0.5,
-            animation: `${bounce} 2s infinite`,
-          }}
-        />
+      {/* UBICACIÓN */}
+      <Box sx={{ display: "flex", flexDirection: "column", gap: "1vh" }}>
+        <Box sx={{ ...bounce }}>
+          <img
+            src="https://res.cloudinary.com/dqqbiacuz/image/upload/v1767922502/Vector_3_rdyqra.png"
+            alt="location"
+          />
+        </Box>
 
-        <Typography sx={{ color: "#FBF8F1", fontSize: 20, fontWeight: 300 }}>
+        <Typography sx={{ color: "#F0ECE3", fontSize: 18, fontWeight: 300 }}>
           Puro Pilar
         </Typography>
 
         <Divider />
 
-        <Typography sx={{ color: "#FBF8F1", fontSize: 20, fontWeight: 300 }}>
+        <Typography sx={{ color: "#F0ECE3", fontSize: 18, fontWeight: 300 }}>
           Dr. Jose Penna 170, Pilar
         </Typography>
       </Box>
 
+      {/* BOTÓN */}
       <Link
         href={data.location}
         target="_blank"

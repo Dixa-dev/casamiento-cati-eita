@@ -1,6 +1,6 @@
 import { Box, Button, Link, Typography } from "@mui/material";
 
-const Song = ({ SongList }) => {
+const Song = ({ SongList, bounce }) => {
   return (
     <Box
       sx={{
@@ -17,15 +17,21 @@ const Song = ({ SongList }) => {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-
           textAlign: "center",
           gap: "3vh",
         }}
       >
-        <img
+        <Box
+          component="img"
           src="https://res.cloudinary.com/dqqbiacuz/image/upload/v1767498147/Vector_1_lmy2zq.png"
           alt="song"
+          sx={{
+            width: 46,
+            height: "auto",
+            ...bounce,
+          }}
         />
+
         <Box sx={{ width: "83%" }}>
           <Typography
             sx={{
@@ -49,15 +55,15 @@ const Song = ({ SongList }) => {
             sx={{
               color: "#FBF8F1",
               background: "#ADA6A0",
-            //   marginTop: "1.5vh",
               borderRadius: "20px",
-              fontSize:"12px"
+              fontSize: "12px",
             }}
           >
             AGREGAR CANCIÓN
           </Button>
         </Link>
       </Box>
+
       <Box>
         <img
           src="https://res.cloudinary.com/dqqbiacuz/image/upload/v1767399202/Footer2_1_nwh2b9.png"

@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import KeyboardArrowDownRoundedIcon from "@mui/icons-material/KeyboardArrowDownRounded";
 
-const Portada = ({ data }) => {
+const Portada = ({ data, bounce }) => {
   const handleScroll = () => {
     const nextSection = document.getElementById("countdown");
     if (nextSection) {
@@ -55,7 +55,6 @@ const Portada = ({ data }) => {
           pointerEvents: "none",
         }}
       >
-        {/* NOS CASAMOS */}
         <Box
           component="img"
           src="https://res.cloudinary.com/dqqbiacuz/image/upload/v1767401478/NOS_CASAMOS_wypygl.png"
@@ -67,7 +66,6 @@ const Portada = ({ data }) => {
           }}
         />
 
-        {/* CATI & EITAN */}
         <Box
           component="img"
           src="https://res.cloudinary.com/dqqbiacuz/image/upload/v1767573922/Cati_Eitan_mmllng.png"
@@ -96,18 +94,7 @@ const Portada = ({ data }) => {
             fontSize: 48,
             cursor: "pointer",
             color: "rgba(0,0,0,0.7)",
-            animation: "bounce 2s infinite",
-            "@keyframes bounce": {
-              "0%, 20%, 50%, 80%, 100%": {
-                transform: "translateY(0)",
-              },
-              "40%": {
-                transform: "translateY(8px)",
-              },
-              "60%": {
-                transform: "translateY(4px)",
-              },
-            },
+            ...bounce,
           }}
         />
       </Box>
